@@ -1,20 +1,13 @@
-// Mutations
+// Slasher Flick
 
-function mutation(arr) {
-  var wordA = arr[0].toLowerCase();
-  var wordB = arr[1].toLowerCase();
-  // lower case both string inputs for comparison purposes
+function slasher(arr, howMany) {
+  // it doesn't always pay to be first
   
-  for(var i=0; i<wordB.length; i++){
-    // goes thru wordB letters to see if they are in wordA
-    var value = wordA.indexOf(wordB[i]);
-    // value holder for charactor
-    if(value===-1){
-      return false;
-      // -1 is the result meaning its not contained in wordA
-    }
-  }
-  return true; //arr;
+  arr.splice(0, howMany);
+ // 0 is starting index point
+ // howMany is the number to chop
+ 
+  return arr;
 }
 
-mutation(["hello", "hey"]);
+slasher([1, 2, 3], 2);

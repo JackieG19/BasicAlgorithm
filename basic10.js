@@ -1,13 +1,17 @@
-// Slasher Flick
+// Chunky Monkey
 
-function slasher(arr, howMany) {
-  // it doesn't always pay to be first
-  
-  arr.splice(0, howMany);
- // 0 is starting index point
- // howMany is the number to chop
- 
-  return arr;
+function chunkArrayInGroups(arr, size) {
+  // Break it up.
+  var array = []; // add into empty array
+  var count = 0;
+  // while loop counter and increment index
+  while(count < arr.length){
+    array.push(arr.slice(count, count + size));
+    // add to array values between current index and size
+    count = count + size;
+    // increase count
+  }
+  return array;
 }
 
-slasher([1, 2, 3], 2);
+chunkArrayInGroups(["a", "b", "c", "d"], 2);

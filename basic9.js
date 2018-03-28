@@ -1,17 +1,24 @@
-// Chunky Monkey
+// Truncate a string
 
-function chunkArrayInGroups(arr, size) {
-  // Break it up.
-  var array = []; // add into empty array
-  var count = 0;
-  // while loop counter and increment index
-  while(count < arr.length){
-    array.push(arr.slice(count, count + size));
-    // add to array values between current index and size
-    count = count + size;
-    // increase count
+function truncateString(str, num) {
+  // Clear out that junk in your trunk
+  if(num>3){
+    if(str.length>num){
+      str = str.slice(0, num-3);
+      // slice the string 3 short of number
+      str = str.concat("...");
+      // add...to end of string
+    }
+    return str;
   }
-  return array;
+  else{
+    str = str.slice(0, num);
+    // slice string
+    str = str.concat("...");
+    // concat to the end
+  }
+  return str;
 }
 
-chunkArrayInGroups(["a", "b", "c", "d"], 2);
+truncateString("A-tisket a-tasket A green and yellow basket", 11);
+
